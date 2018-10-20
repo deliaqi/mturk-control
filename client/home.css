@@ -1,0 +1,9 @@
+input[type="range"] {
+  width: 30%;
+  margin: auto;
+}
+
+.page-header{
+    margin-top:30px;
+    text-align: center;
+}

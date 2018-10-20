@@ -1,0 +1,6 @@
+settings.json
+.deploy/
+.deploy-mup/
+.mup-new/
+.pm2-meteor/
+.ssl/

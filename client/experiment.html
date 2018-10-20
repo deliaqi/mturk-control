@@ -1,0 +1,72 @@
+<template name="experiment">
+  <head>
+    <title>demo</title>
+  </head>
+  <body>
+    {{> hello}}
+  </body>
+</template>
+
+
+<template name="hello">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <p class="navbar-text navbar-right" style="margin-right: 30px">已进行：{{timer}} </p>
+<!--                     <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow={{timer}} aria-valuemin="0" aria-valuemax="100" type="width: 40%">
+              <span class="sr-only">40% 完成</span>
+                </div>
+            </div> -->
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!--巨幕-->
+  <div class="jumbotron">
+      <div class="container">
+          <h1>陌生人关系实验室</h1>
+          <p>当前在线人数：{{people}}</p>
+          <p>请随意交谈，总时长为30分钟。</p>
+          <p><a class="btn btn-primary btn-lg" href="http://36questionsinlove.com" role="button">Learn more »</a></p>
+      </div>
+  </div>
+
+  <div class="box">
+      <div class="chatContent">
+        <div class="top">
+          <img class="topImg" src="http://placehold.it/40x40">
+          <span class="topName">Stranger</span>
+        </div>
+        <div class="center">
+          <ul>
+            {{#each conversations}}
+              <li class={{style}}>
+                <img class="chatImg" src="http://placehold.it/40x40">
+                <p class="msgText">{{conversation}}</p>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="bottom">
+          <textarea id="sentence" class="chatInput" maxlength="800" rows="5" cols="40" placeholder="请在此输入要发送的内容..."></textarea>
+          <button id="send" class="sendbtn">发送</button>
+        </div>
+    </div>
+    <!-- {{#each conversations}}
+    <div class="row" >
+      <div class="col-md-4">
+        <div class="post-preview"></div>
+          <div class="post-title">{{user}}. {{conversation}}</div>
+    </div>
+    {{/each}} -->
+  </div>
+
+  <form class="container">
+    <button id="exitSurvey" class="btn btn-primary btn-complete">完成实验</button>
+    <hr>
+  </form>
+  
+</template>

@@ -1,0 +1,32 @@
+<template name="survey">
+    <!--巨幕-->
+    <div class="jumbotron">
+ 
+        <div class="container">
+            <h1>问卷反馈</h1>
+        </div>
+    </div>
+
+  <form class="survey container" role="form">
+  	<div class="form-group col-md-6">
+  		<label for="name">关于这个任务什么困惑吗？</label>
+		<input type="text" class="form-control answer-input" name="confusing"
+			   style="weight:200px">
+		<!-- <textarea name="confusing" rows="3"></textarea><br/> -->
+  	</div>
+  	<div class="form-group col-md-6">
+  		<label for="name">其他任何反馈？</label>
+		<input type="text" class="form-control answer-input" id="name" name="feedback">
+		<!-- <textarea name="feedback" rows="3"></textarea><br/> -->
+  	</div>
+ <!--    <p>Was there anything confusing about this HIT?</p>
+    <textarea name="confusing" rows="3"></textarea><br/>
+    <p>Do you have any feedback for us?</p>
+    <textarea name="feedback" rows="3"></textarea><br/> -->
+    <button type="submit" class="btn btn-primary">提交反馈</button>
+  </form>
+</template>
+
+
+
+
