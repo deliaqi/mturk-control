@@ -1,13 +1,11 @@
 
 
-var myInterval = Meteor.setInterval(function(){
-	  // var timer = Timer.findOne({user:Meteor.userId()});
-	  var curtimer = Session.get("curTimer");
-      curtimer ++;
-      Session.set("curTimer", curtimer);
-      // var progress = parseInt(100 * curtimer / ( 60 * 15 ));
-      // console.log("Interval called " + curtimer + " times" + "width: "+ progress +"%");
-   }, 1000);
+var myInterval = Meteor.setInterval(function() {
+	// var timer = Timer.findOne({user:Meteor.userId()});
+	Session.set("current", new Date());
+	// var progress = parseInt(100 * curtimer / ( 60 * 15 ));
+	// console.log("Interval called " + curtimer + " times" + "width: "+ progress +"%");
+}, 1000);
 
 Tracker.autorun(function() {
 	if (TurkServer.inExperiment()) {
@@ -54,10 +52,11 @@ Template.hello.helpers(
 	},
 	timer: function () {
 		var currentRound = RoundTimers.findOne({}, { sort: { index: -1 }});
-		var curTimer = (new Date() - currentRound.startTime) / 1000;
+		var current = Session.get("current");
+		var curTimer = (current - currentRound.startTime) / 1000;
 		var m = parseInt(curTimer / 60);
         var s = parseInt(curTimer % 60);
-		return s;
+		return m + "分" + s + "秒";
 	},
 	// progress: function () {
 	// 	var progress = 0;
